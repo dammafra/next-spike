@@ -25,8 +25,10 @@ export class CarsService {
     return newCar;
   }
 
-  updateData(carId: number, car: Car) {
-    this.data = this.data.map((c) => (c.id === carId ? car : c));
+  updateData(carId: number, car: Omit<Car, 'id'>) {
+    this.data = this.data.map((c) =>
+      c.id === carId ? { id: carId, ...car } : c
+    );
     return car;
   }
 

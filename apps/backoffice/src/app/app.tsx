@@ -1,13 +1,16 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { CarForm, CarsList } from './cars';
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="backoffice" />
-      <div />
-    </>
+    <Routes>
+      <Route path="" element={<Navigate replace to="cars" />} />
+      <Route path="cars">
+        <Route index element={<CarsList />} />
+        <Route path="add" element={<CarForm />} />
+        <Route path=":id" element={<CarForm />} />
+      </Route>
+    </Routes>
   );
 }
 

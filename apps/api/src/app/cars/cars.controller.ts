@@ -31,7 +31,10 @@ export class CarsController {
   }
 
   @Put(':id')
-  updateData(@Param('id', new ParseIntPipe()) carId: number, @Body() car: Car) {
+  updateData(
+    @Param('id', new ParseIntPipe()) carId: number,
+    @Body() car: Omit<Car, 'id'>
+  ) {
     return this.carsService.updateData(carId, car);
   }
 
