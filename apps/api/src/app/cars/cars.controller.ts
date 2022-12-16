@@ -8,8 +8,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { Car } from './car.model';
-
+import { Car } from '@next-spike/models';
 import { CarsService } from './cars.service';
 
 @Controller('cars')

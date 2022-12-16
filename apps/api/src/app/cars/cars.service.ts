@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Car } from './car.model';
+import { Car } from '@next-spike/models';
 
 @Injectable()
 export class CarsService {
